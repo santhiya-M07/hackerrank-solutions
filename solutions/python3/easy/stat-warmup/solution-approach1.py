@@ -7,6 +7,12 @@
 # Language    python3
 # Status      Accepted
 # Submitted   2026-08-13, 09:33 a.m.
+# Technique   sorting-and-frequency-counting
+# Time        O(N log N)
+# Space       O(N)
+# Insight     The implementation calculates descriptive statistics by sorting the array for median determination and using a hash map to identify the smallest mode among those with maximum frequency.
+# Interview   Before: "How would you calculate the confidence interval for a sample mean?" After: "I would use the standard deviation and the sample size with the 1.96 z-score constant, resulting in O(N log N) time complexity due to the initial sorting required for the median."
+# Pitfalls    (1) Failing to select the numerically smallest integer when multiple elements share the maximum frequency as required by the mode definition.  (2) Incorrectly calculating the median for even-sized arrays by failing to average the two middle elements.  (3) Using the wrong standard deviation formula by omitting the division by N before taking the square root.
 # ──────────────────────────────────────────────────
 
 import math
