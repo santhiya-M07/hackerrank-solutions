@@ -7,6 +7,12 @@
 # Language    python3
 # Status      Accepted
 # Submitted   2026-08-13, 09:22 a.m.
+# Technique   algebraic-regression-coefficient-derivation
+# Time        O(1)
+# Space       O(1)
+# Insight     The variance of y is derived by calculating the correlation coefficient from the product of the two regression slopes and applying the regression coefficient formula.
+# Interview   Before: "How do you find the variance of y given two regression lines and the standard deviation of x?" After: "By isolating the slopes b_yx and b_xy, we compute the correlation r, then solve for sigma_y using the regression formula in O(1) time."
+# Pitfalls    (1) Confusing the regression line of y on x with x on y when assigning slope values.  (2) Failing to square the standard deviation to obtain the variance as requested by the problem statement.
 # ──────────────────────────────────────────────────
 
 import math
