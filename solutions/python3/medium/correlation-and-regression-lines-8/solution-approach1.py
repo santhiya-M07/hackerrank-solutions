@@ -7,6 +7,12 @@
 # Language    python3
 # Status      Accepted
 # Submitted   2026-08-13, 09:19 a.m.
+# Technique   least-squares-linear-regression
+# Time        O(n)
+# Space       O(n)
+# Insight     The implementation calculates the linear regression line y = mx + c by determining the slope m as the covariance of x and y divided by the variance of x.
+# Interview   Before: "How do you predict a dependent variable given an independent one?" After: "You compute the least-squares regression line using the means of both datasets to find the slope and intercept, resulting in an O(n) time complexity for the calculation."
+# Pitfalls    (1) Failing to calculate the mean of the datasets correctly before computing the covariance and variance.  (2) Rounding the final prediction prematurely before the final output format requirement.  (3) Confusing the independent variable x with the dependent variable y in the regression formula.
 # ──────────────────────────────────────────────────
 
 # Given data
