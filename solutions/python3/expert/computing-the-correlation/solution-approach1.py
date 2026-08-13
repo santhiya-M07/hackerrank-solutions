@@ -7,6 +7,12 @@
 # Language    python3
 # Status      Accepted
 # Submitted   2026-08-13, 09:35 a.m.
+# Technique   pearson-correlation-coefficient-calculation
+# Time        O(N)
+# Space       O(N)
+# Insight     The Pearson correlation coefficient is computed by calculating the sums of products and squares of two vectors in linear time.
+# Interview   Before: "How do I calculate the correlation between two large datasets without external libraries?" After: "I implement the Pearson formula using single-pass summation, achieving O(N) time complexity, which is efficient for the 500,000 student constraint."
+# Pitfalls    (1) Floating point precision errors may occur if the denominator is extremely close to zero.  (2) The formula requires exactly two decimal places, so failing to use formatted output will result in incorrect answers.  (3) Input reading must handle tab-separated values correctly to avoid parsing errors.
 # ──────────────────────────────────────────────────
 
 import math
