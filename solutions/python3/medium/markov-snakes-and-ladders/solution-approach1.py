@@ -7,6 +7,12 @@
 # Language    python3
 # Status      Accepted
 # Submitted   2026-08-13, 09:36 a.m.
+# Technique   monte-carlo-simulation
+# Time        O(T * games * max_rolls)
+# Space       O(S + L)
+# Insight     The simulation approximates the expected value by averaging the number of die rolls required to reach square 100 across 5000 independent game trials.
+# Interview   Before: "How would you calculate the expected number of rolls for this board?" After: "I used a Monte Carlo simulation with 5000 trials to approximate the expected value, which runs in O(T * games * max_rolls) time, ensuring we handle the biased die and board transitions correctly."
+# Pitfalls    (1) Failing to handle the rule where rolls resulting in a position greater than 100 are ignored and the player remains at their current square.  (2) Incorrectly assuming the game must terminate, ignoring the requirement to cap simulations at 1000 rolls per game.  (3) Misinterpreting the board input format when the number of snakes or ladders is zero, leading to incorrect input consumption.
 # ──────────────────────────────────────────────────
 
 import random
