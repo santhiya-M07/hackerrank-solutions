@@ -7,6 +7,12 @@
 # Language    python3
 # Status      Accepted
 # Submitted   2026-08-13, 09:16 a.m.
+# Technique   polynomial-feature-expansion-least-squares
+# Time        O(N * F^3 + T * F^3)
+# Space       O(N * F^3)
+# Insight     The implementation transforms input features into a polynomial basis of degree three and solves for regression coefficients using the ordinary least squares method.
+# Interview   Before: "How would you model non-linear relationships between features and price?" After: "I use polynomial feature expansion to map inputs into a higher-dimensional space, then apply O(N * F^3) least squares regression to fit the model, which handles the polynomial order constraint of less than four."
+# Pitfalls    (1) Failing to include the intercept term (degree zero) in the feature matrix, which is required for accurate polynomial regression.  (2) Assuming the polynomial order is exactly three rather than less than four, which could lead to overfitting if the underlying function is simpler.  (3) Neglecting to handle the interaction terms correctly during feature expansion, which are essential for capturing dependencies between different office features.
 # ──────────────────────────────────────────────────
 
 import sys
